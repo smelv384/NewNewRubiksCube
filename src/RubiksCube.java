@@ -352,31 +352,9 @@ public class RubiksCube {
     }
 
     public void turnUP() {
+
+
         CornerEdge holder = froRigTop;
-        froRigTop = froLefTop;
-        froLefTop = bacLefTop;
-        bacLefTop = bacRigTop;
-        bacRigTop = holder;
-
-        froRigTop.swapXZ();
-        froLefTop.swapXZ();
-        bacLefTop.swapXZ();
-        bacRigTop.swapXZ();
-
-        holder = froTop;
-        froTop = topLef;
-        topLef = bacBot;
-        bacTop = topRig;
-        topRig = holder;
-
-        froTop.swapXZ();
-        topLef.swapXZ();
-        bacTop.swapXZ();
-        topRig.swapXZ();
-    }
-
-    public void turnDP() {
-        CornerEdge holder = froRigBot;
         froRigTop = froLefTop;
         froLefTop = bacLefTop;
         bacLefTop = bacRigTop;
@@ -397,6 +375,30 @@ public class RubiksCube {
         topLef.swapXZ();
         bacTop.swapXZ();
         topRig.swapXZ();
+    }
+
+    public void turnDP() {
+        CornerEdge holder = froLefBot;
+        froLefBot = froRigBot;
+        froRigBot = bacRigBot;
+        bacRigBot = bacLefBot;
+        bacLefBot = holder;
+
+        froRigBot.swapXZ();
+        froLefBot.swapXZ();
+        bacLefBot.swapXZ();
+        bacRigBot.swapXZ();
+
+        holder = froBot;
+        froBot = botRig;
+        botRig = bacBot;
+        bacBot = botLef;
+        botLef = holder;
+
+        froBot.swapXZ();
+        botLef.swapXZ();
+        bacBot.swapXZ();
+        botRig.swapXZ();
     }
 
     public void turnRP() {
