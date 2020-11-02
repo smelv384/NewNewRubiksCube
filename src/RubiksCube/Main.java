@@ -1,3 +1,5 @@
+package RubiksCube;
+
 import java.util.Scanner;
 public class Main {
 
@@ -5,6 +7,7 @@ public class Main {
         Scanner kb = new Scanner(System.in);
         String input = "";
         RubiksCube theCube = new RubiksCube();
+        CubeRenderer.initialize(theCube);
         System.out.print(
 
                     "Commands are clockwise by default\n" +

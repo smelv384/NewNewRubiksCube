@@ -1,3 +1,4 @@
+package RubiksCube;
 
 public abstract class CubePiece {
     enum Colour {

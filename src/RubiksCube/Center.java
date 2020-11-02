@@ -1,3 +1,5 @@
+package RubiksCube;
+
 /**
  * This is an extremely simple class.  Since the axis is stored in the cube object as the instance of the center,
  * it's not necessary to store the axis of the piece, and since there's only one colour, it just needs to be one simple method.

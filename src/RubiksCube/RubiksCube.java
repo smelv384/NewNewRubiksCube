@@ -1,3 +1,4 @@
+package RubiksCube;
 
 public class RubiksCube {
 

@@ -1,3 +1,4 @@
+package RubiksCube;
 
 /**
  * The corner/edge class for the rubik's cube.  Needs to store 3 colours as well as their axes so that when the cube is rendered
