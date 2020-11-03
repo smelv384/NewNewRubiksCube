@@ -19,10 +19,10 @@ public class Main {
                     "D: Turn bottom side\n" +
                     "R: Turn right side\n" +
                     "L: Turn left side clockwise\n" +
-                    "B: Turn back side");
+                    "B: Turn back side\n");
 
         while (!input.toLowerCase().equals("exit")) {
-            theCube.printCube();
+            System.out.print(theCube.printCube());
             System.out.println("Print 'exit' to exit");
             System.out.print("Command: ");
             input = kb.nextLine();

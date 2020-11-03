@@ -70,47 +70,64 @@ public class RubiksCube {
     /**
      * Prints each portion of the cube as a flat cube of 6 sections of 9 cube sides
      */
-    public void printCube() {
-        System.out.printf("   %c%c%c   \n",
+    public String printCube() {
+        String returnString = "";
+        String concatString = "";
+        concatString = String.format("   %c%c%c   \n",
                 bacLefBot.getZ().toString().charAt(0), bacBot.getZ().toString().charAt(0), bacRigBot.getZ().toString().charAt(0));
+        returnString += concatString;
 
-        System.out.printf("   %c%c%c   \n",
+        concatString = String.format("   %c%c%c   \n",
                 bacLef.getZ().toString().charAt(0), bac.getColour().toString().charAt(0), bacRig.getZ().toString().charAt(0));
+        returnString += concatString;
 
-        System.out.printf("   %c%c%c   \n",
+        concatString = String.format("   %c%c%c   \n",
                 bacLefTop.getZ().toString().charAt(0), bacTop.getZ().toString().charAt(0), bacRigTop.getZ().toString().charAt(0));
+        returnString += concatString;
 
-        System.out.printf("%c%c%c%c%c%c%c%c%c\n",
+        concatString = String.format("%c%c%c%c%c%c%c%c%c\n",
                 bacLefBot.getX().toString().charAt(0), bacLef.getX().toString().charAt(0), bacLefTop.getX().toString().charAt(0),
                 bacLefTop.getY().toString().charAt(0), bacTop.getY().toString().charAt(0), bacRigTop.getY().toString().charAt(0),
                 bacRigTop.getX().toString().charAt(0), bacRig.getX().toString().charAt(0), bacRigBot.getX().toString().charAt(0));
-        System.out.printf("%c%c%c%c%c%c%c%c%c\n",
+        returnString += concatString;
+
+        concatString = String.format("%c%c%c%c%c%c%c%c%c\n",
                 botLef.getX().toString().charAt(0), lef.getColour().toString().charAt(0), topLef.getX().toString().charAt(0),
                 topLef.getY().toString().charAt(0), top.getColour().toString().charAt(0), topRig.getY().toString().charAt(0),
                 topRig.getX().toString().charAt(0), rig.getColour().toString().charAt(0), botRig.getX().toString().charAt(0));
+        returnString += concatString;
 
-        System.out.printf("%c%c%c%c%c%c%c%c%c\n",
+        concatString = String.format("%c%c%c%c%c%c%c%c%c\n",
                 froLefBot.getX().toString().charAt(0), froLef.getX().toString().charAt(0), froLefTop.getX().toString().charAt(0),
                 froLefTop.getY().toString().charAt(0), froTop.getY().toString().charAt(0), froRigTop.getY().toString().charAt(0),
                 froRigTop.getX().toString().charAt(0), froRig.getX().toString().charAt(0), froRigBot.getX().toString().charAt(0));
+        returnString += concatString;
 
-        System.out.printf("   %c%c%c   \n",
+        concatString = String.format("   %c%c%c   \n",
                 froLefTop.getZ().toString().charAt(0), froTop.getZ().toString().charAt(0), froRigTop.getZ().toString().charAt(0));
+        returnString += concatString;
 
-        System.out.printf("   %c%c%c   \n",
+        concatString = String.format("   %c%c%c   \n",
                 froLef.getZ().toString().charAt(0), fro.getColour().toString().charAt(0), froRig.getZ().toString().charAt(0));
+        returnString += concatString;
 
-        System.out.printf("   %c%c%c   \n",
+        concatString = String.format("   %c%c%c   \n",
                 froLefBot.getZ().toString().charAt(0), froBot.getZ().toString().charAt(0), froRigBot.getZ().toString().charAt(0));
+        returnString += concatString;
 
-        System.out.printf("   %c%c%c   \n",
+        concatString = String.format("   %c%c%c   \n",
                 froLefBot.getY().toString().charAt(0), froBot.getY().toString().charAt(0), froRigBot.getY().toString().charAt(0));
+        returnString += concatString;
 
-        System.out.printf("   %c%c%c   \n",
+        concatString = String.format("   %c%c%c   \n",
                 botLef.getY().toString().charAt(0), bot.getColour().toString().charAt(0), botRig.getY().toString().charAt(0));
+        returnString += concatString;
 
-        System.out.printf("   %c%c%c   \n",
+        concatString = String.format("   %c%c%c   \n",
                 bacLefBot.getY().toString().charAt(0), bacBot.getY().toString().charAt(0), bacRigBot.getY().toString().charAt(0));
+        returnString += concatString;
+
+        return returnString;
     }
 
     public void scramble() {
