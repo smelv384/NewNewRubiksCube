@@ -7,6 +7,7 @@ import java.awt.image.BufferStrategy;
 /**
  * Much of the basic code is from a tutorial by MeanRollerCoding, from
  * https://www.youtube.com/watch?v=KA6rJZOfTTQ&ab_channel=MeanRollerCoding
+ * Modified to take in a rubik's cube object to print
  */
 public class CubeRenderer extends Canvas implements Runnable {
 
@@ -130,10 +131,11 @@ public class CubeRenderer extends Canvas implements Runnable {
 
     /**
      * This method creates a 3x3 square of black squares, each 2 * (cubie height / 6) in width and height
+     *
      * @param g
-     * @param offsetX
-     * @param offsetY
-     * @param bigSquareSize
+     * @param offsetX - The initial offset in the window of the first cubie
+     * @param offsetY - The initial offset in the window of the first cubie
+     * @param bigSquareSize - The width of the black squares in pixels
      */
     private void createBlackSquare(Graphics g, int offsetX, int offsetY, int bigSquareSize) {
         for (int i = 0; i < 3; i++) {
@@ -147,6 +149,14 @@ public class CubeRenderer extends Canvas implements Runnable {
         }
     }
 
+    /**
+     * This method creates the coloured squares based on the cube string from the cube stored in the
+     * CubeRenderer object.
+     * @param g
+     * @param offsetX - The initial offset in the window of the first cubie
+     * @param offsetY - The initial offset in the window of the first cubie
+     * @param squareSize - How wide the cubies are in pixels
+     */
     private void createCubeSquare(Graphics g, int offsetX, int offsetY, int squareSize) {
         String cubeString = renderCube.printCube();
         int k = 0;

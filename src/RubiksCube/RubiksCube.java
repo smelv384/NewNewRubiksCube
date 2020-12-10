@@ -341,6 +341,63 @@ public class RubiksCube {
         bacLef.swapXY();
     }
 
+    public void turnM() {
+        CornerEdge holder = froTop;
+        froTop = bacTop;
+        bacTop = bacBot;
+        bacBot = froBot;
+        froBot = holder;
+
+        froTop.swapYZ();
+        bacTop.swapYZ();
+        bacBot.swapYZ();
+        froBot.swapYZ();
+
+        Center temp = fro;
+        fro = top;
+        top = bac;
+        bac = bot;
+        bot = temp;
+    }
+
+    public void turnE() {
+        CornerEdge holder = froLef;
+        froLef = bacLef;
+        bacLef = bacRig;
+        bacRig = froRig;
+        froRig = holder;
+
+        froLef.swapXZ();
+        bacLef.swapXZ();
+        bacRig.swapXZ();
+        froRig.swapXZ();
+
+        Center temp = fro;
+        fro = lef;
+        lef = bac;
+        bac = rig;
+        rig = temp;
+    }
+
+    public void turnS() {
+        CornerEdge holder = topRig;
+        topRig = topLef;
+        topLef = botLef;
+        botLef = botRig;
+        botRig = holder;
+
+        topRig.swapXY();
+        topLef.swapXY();
+        botLef.swapXY();
+        botRig.swapXY();
+
+        Center temp = top;
+        top = lef;
+        lef = bot;
+        bot = rig;
+        rig = temp;
+    }
+
     /**
      * Reverse methods.  Implemented exactly the same as the regular methods, but go the opposite direction.  Follows
      * the same format.
@@ -491,6 +548,63 @@ public class RubiksCube {
         bacRig.swapXY();
     }
 
+    public void turnMP() {
+        CornerEdge holder = froTop;
+        froTop = froBot;
+        froBot = bacBot;
+        bacBot = bacTop;
+        bacTop = holder;
+
+        froTop.swapYZ();
+        froBot.swapYZ();
+        bacBot.swapYZ();
+        bacTop.swapYZ();
+
+        Center temp = fro;
+        fro = bot;
+        bot = bac;
+        bac = top;
+        top = temp;
+    }
+
+    public void turnEP() {
+        CornerEdge holder = froLef;
+        froLef = froRig;
+        froRig = bacRig;
+        bacRig = bacLef;
+        bacLef = holder;
+
+        froLef.swapXZ();
+        froRig.swapXZ();
+        bacRig.swapXZ();
+        bacLef.swapXZ();
+
+        Center temp = fro;
+        fro = rig;
+        rig = bac;
+        bac = lef;
+        lef = temp;
+    }
+
+    public void turnSP() {
+        CornerEdge holder = topLef;
+        topLef = topRig;
+        topRig = botRig;
+        botRig = botLef;
+        botLef = holder;
+
+        topLef.swapXY();
+        topRig.swapXY();
+        botRig.swapXY();
+        botLef.swapXY();
+
+        Center temp = top;
+        top = rig;
+        rig = bot;
+        bot = lef;
+        lef = temp;
+    }
+
     /**
      * Double turns.  Could be implemented outside of the cube, but are done inside cube object for ease of
      * transcription of solution algorithms.  To do: make this more efficient by just swapping pieces - will reduce
@@ -526,5 +640,176 @@ public class RubiksCube {
         turnB();
     }
 
+    public void turnM2() {
+        turnM();
+        turnM();
+    }
 
+    public void turnE2() {
+        turnE();
+        turnE();
+    }
+
+    public void turnS2() {
+        turnS();
+        turnS();
+    }
+
+    /**
+     * Full cube turns
+     */
+    public void turnX() {
+        turnR();
+        turnLP();
+        turnMP();
+    }
+
+    public void turnY() {
+        turnU();
+        turnEP();
+        turnDP();
+    }
+
+    public void turnZ() {
+        turnF();
+        turnS();
+        turnBP();
+    }
+
+    /**
+     * Anti-turn full cube turns
+     */
+    public void turnXP() {
+        turnRP();
+        turnL();
+        turnM();
+    }
+
+    public void turnYP() {
+        turnUP();
+        turnE();
+        turnD();
+    }
+
+    public void turnZP() {
+        turnFP();
+        turnSP();
+        turnB();
+    }
+
+    /**
+     * Double turn full cube turns
+     */
+    public void turnX2() {
+        turnX();
+        turnX();
+    }
+
+    public void turnY2() {
+        turnY();
+        turnY();
+    }
+
+    public void turnZ2() {
+        turnZ();
+        turnZ();
+    }
+
+    /**
+     * Two-layer turns
+     */
+    public void turnFW() {
+        turnF();
+        turnS();
+    }
+
+    public void turnUW() {
+        turnU();
+        turnEP();
+    }
+
+    public void turnDW() {
+        turnD();
+        turnE();
+    }
+
+    public void turnLW() {
+        turnL();
+        turnM();
+    }
+
+    public void turnRW() {
+        turnR();
+        turnMP();
+    }
+
+    public void turnBW() {
+        turnB();
+        turnSP();
+    }
+
+    /**
+     * Two-layer reverse turns
+     */
+    public void turnFWP() {
+        turnFP();
+        turnSP();
+    }
+    public void turnUWP() {
+        turnUP();
+        turnE();
+    }
+
+    public void turnDWP() {
+        turnDP();
+        turnEP();
+    }
+
+    public void turnLWP() {
+        turnLP();
+        turnMP();
+    }
+
+    public void turnRWP() {
+        turnRP();
+        turnM();
+    }
+
+    public void turnBWP() {
+        turnBP();
+        turnS();
+    }
+
+    /**
+     * Double two-layer turns
+     */
+    public void turnFW2() {
+        turnFW();
+        turnFW();
+    }
+
+    public void turnUW2() {
+        turnUW();
+        turnUW();
+    }
+
+    public void turnDW2() {
+        turnDW();
+        turnDW();
+    }
+
+    public void turnLW2() {
+        turnLW();
+        turnLW();
+    }
+
+    public void turnRW2() {
+        turnRW();
+        turnRW();
+    }
+
+    public void turnBW2() {
+        turnBW();
+        turnBW();
+    }
 }
